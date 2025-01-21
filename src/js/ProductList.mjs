@@ -15,7 +15,7 @@ function productCardTemplate(product){
 
 function topList(list){
     const topValues = ["880RR", "985RF", "985PR", "344YJ"];
-    const finalList =list.filter((tent) => topValues.includes(tent.Id));
+    const finalList = list.filter((tent) => topValues.includes(tent.Id));
     return finalList;
 }
 
