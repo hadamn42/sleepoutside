@@ -237,3 +237,31 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+
+/*******************************/
+/********  Form Design  ********/       
+/*******************************/
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  align-items: center;
+}
+
+.newsletterForm {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25em;
+  padding: 0.5em;
+  border: 1px solid var(--light-grey);
+  max-width: 250px;
+}
+
+.newsletterForm>.subscribeButton {
+  margin: 0.5em;
+}
+
+#confirmationMessage {
+  color: green;
+}
