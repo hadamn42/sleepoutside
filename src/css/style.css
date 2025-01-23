@@ -239,9 +239,9 @@ footer {
 }
 
 
-/*******************************/
-/********  Form Design  ********/       
-/*******************************/
+/*******************************************/
+/********  Form Design(Newsletter)  ********/       
+/*******************************************/
 .newsletter {
   display: flex;
   flex-direction: column;
@@ -264,4 +264,38 @@ footer {
 
 #confirmationMessage {
   color: green;
+}
+
+/*******************************************/
+/********  Form Design(CommentBox)  ********/       
+/*******************************************/
+.commentsArea>h3{
+  text-align: center;
+  grid-column: span 2;
+}
+
+.commentsArea {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 0.5em;
+  align-items: start;
+}
+
+#commentsBox {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25em;
+  padding: 0.5em;
+  border: 1px solid var(--light-grey);
+  max-width: 100%;
+}
+
+#commentsBox > #opinionButton {
+  margin: 0.5em;
+}
+
+#commentsDisplayed {
+  grid-column: 2;
+  padding-top: 1em;
+  text-align: center;
 }
