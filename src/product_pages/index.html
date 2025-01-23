@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
@@ -58,7 +58,23 @@
     </header>
 
     <main class="divider"></main>
-
+    <!--Comments box and Area-->
+    <section class="commentsArea">
+      <h3>Share your opinion with us</h3>
+      <div id="commentsBox">
+        <textarea
+          id="commentInput"
+          placeholder="Write your opinion here"
+          maxlength="500"
+          required
+          aria-label="Write your comment"
+        ></textarea>
+        <button type="button" id="opinionButton">Post</button>
+      </div>
+      <p id="commentsDisplayed">~</p>
+    </section>
+    <p class="divider"></p>
     <footer>&copy;NOT a real business</footer>
+    <script src="/js/commentsBox.js" type="module"></script>
   </body>
 </html>
