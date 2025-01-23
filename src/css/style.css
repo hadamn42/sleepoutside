@@ -238,9 +238,8 @@ footer {
   padding: 1em;
 }
 
-
 /*******************************************/
-/********  Form Design(Newsletter)  ********/       
+/********  Form Design(Newsletter)  ********/
 /*******************************************/
 .newsletter {
   display: flex;
@@ -258,7 +257,7 @@ footer {
   max-width: 250px;
 }
 
-.newsletterForm>.subscribeButton {
+.newsletterForm > .subscribeButton {
   margin: 0.5em;
 }
 
@@ -267,9 +266,9 @@ footer {
 }
 
 /*******************************************/
-/********  Form Design(CommentBox)  ********/       
+/********  Form Design(CommentBox)  ********/
 /*******************************************/
-.commentsArea>h3{
+.commentsArea > h3 {
   text-align: center;
   grid-column: span 2;
 }
@@ -298,4 +297,5 @@ footer {
   grid-column: 2;
   padding-top: 1em;
   text-align: center;
+  white-space: pre-wrap;
 }

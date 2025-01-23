@@ -4,7 +4,7 @@ function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
-  
+
   //has to be a funciton here or the buttons will not add back in for some reason
   removeIt();
 }
@@ -30,30 +30,28 @@ function cartItemTemplate(item) {
   return newItem;
 }
 
-
 // removeFromCart();
 renderCartContents();
 
 // Adding in the remove button
-function removeIt(){
+function removeIt() {
   const removeButtons = document.querySelectorAll(".remove-item");
-  removeButtons.forEach(button =>{
+  removeButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       let prodList = getLocalStorage("so-cart");
       let prodId = button.id;
       offList(prodList, prodId);
     });
-    
   });
 }
 
-function offList (prodList, prodId){
+function offList(prodList, prodId) {
   let prodIndex = "";
-    for( var i in prodList){
-      if (prodList[i].Id == prodId && prodIndex == ""){
-        prodIndex = i;
-      }
+  for (var i in prodList) {
+    if (prodList[i].Id == prodId && prodIndex == "") {
+      prodIndex = i;
     }
+  }
 
   prodList.splice(prodIndex, 1);
   setLocalStorage("so-cart", prodList);
