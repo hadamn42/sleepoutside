@@ -39,11 +39,23 @@ export default class ProductDetails {
 
     addToCart() {
         let allProductsInCart = getLocalStorage("so-cart");
-
+        let prod = this.product;
+        prod.Qty = 1;
         if (Array.isArray(allProductsInCart)) {
-          allProductsInCart.push(this.product);
+
+          if (allProductsInCart.some(newCartItem => Object.values(newCartItem).includes(prod.Id))){
+            let upItem = allProductsInCart.indexOf(allProductsInCart.find(i => i.Id == prod.Id));
+            allProductsInCart[upItem].Qty = allProductsInCart[upItem].Qty + 1;
+            // console.log(allProductsInCart[upItem].Qty);
+            // newCart.upItem.Id = newCart.upItem.Id++;
+            // console.log("This is an existing item.");
+            // console.log(upItem);
+          }else{
+          allProductsInCart.push(prod);
+          };
+
         } else {
-          allProductsInCart = [this.product];
+          allProductsInCart = [prod];
         };
 
         setLocalStorage("so-cart", allProductsInCart);
