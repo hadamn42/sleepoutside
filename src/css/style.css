@@ -212,11 +212,25 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+  grid-row: 2;
+  grid-column: 4;
 }
 
-.remotve-item:hover {
-  background-color: green !important;
-  color: white;
+.less-qty, .more-qty{
+  background-color: var(--primary-color);
+  padding: 0.02em 0.2em;
+  margin: 0.02em auto;
+  display: block;
+}
+
+.less-qty{
+  grid-row: 1;
+  grid-column: 4;
+}
+
+.more-qty{
+  grid-row: 1;
+  grid-column: 5;
 }
 
 @media screen and (min-width: 500px) {
