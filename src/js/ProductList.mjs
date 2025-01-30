@@ -2,9 +2,9 @@ import {renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product){
     return `<li class="product-card">
-            <a href="product_pages/?product=${product.Id}">
+            <a href="product_pages/index.html?product=${product.Id}">
               <img
-                src="${product.Image}"
+                src="${product.Images.PrimaryMedium}"
                 alt="${product.Name}"
               />
               <h3 class="card__brand">${product.Brand.Name}</h3>
@@ -19,7 +19,7 @@ function topList(list){
     return finalList;
 }
 
-    export default class ProductList {
+export default class ProductList {
     constructor(category, dataSource, listElement){
         //this will make our class flexible
         this.category = category;
@@ -28,10 +28,13 @@ function topList(list){
     }
 
     async init(){
-        const list = await this.dataSource.getData();
-        const tipList = topList(list);
+        const list = await this.dataSource.getData(this.category);
+        // console.log(list);
+        // const tipList = topList(list);
 
-        this.renderList(tipList);
+        this.renderList(list);
+
+        document.querySelector(".title").innerHTML = this.category;
     }
     renderList(list){
         renderListWithTemplate(productCardTemplate, this.listElement, list);
