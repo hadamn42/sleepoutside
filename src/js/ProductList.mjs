@@ -28,7 +28,7 @@ function topList(list){
     }
 
     async init(){
-        const list = await this.dataSource.getData();
+        const list = await this.dataSource.getData(this.category);
         const tipList = topList(list);
 
         this.renderList(tipList);

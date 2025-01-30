@@ -122,6 +122,25 @@ button {
 .products {
   padding: 0.5em;
 }
+.product-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+.product-grid img{
+  height: 8em;
+  width: auto;
+}
+.product-grid a{
+  color: black;
+  text-decoration: none;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .product-list {
   display: flex;
   flex-flow: row wrap;
