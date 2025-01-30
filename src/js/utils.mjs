@@ -56,10 +56,18 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 
 
 export async function loadHeaderFooter(){
+
+  if (header.innerHTML.trim() !== "" || footer.innerHTML.trim() !== "") {
+    console.log("Header & footer are already uploaded");
+    return;
+  }
   const headerTemp = await loadTemplate("../partials/header.html");
   const header = document.querySelector("#main-header");
   const footerTemp = await loadTemplate("../partials/footer.html");
   const footer = document.querySelector("#main-footer");
+
+  header.innerHTML = "";
+  footer.innerHTML = "";
 
   renderWithTemplate(headerTemp, header);  
   renderWithTemplate(footerTemp, footer);
