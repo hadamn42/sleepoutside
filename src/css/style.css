@@ -290,13 +290,36 @@ button {
 }
 
 /* Cart total styles */
+
+.cart-footer-show{
+  display: grid;
+  grid-template-columns: auto 35%;
+  justify-items: right;
+}
+
 .cart-total{
   text-align: right;
+  grid-column: 2;
   /* background-color: yellow; */
 }
 
 .cart-footer-hide{
   display: none;
+}
+
+#checkout-button{
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  grid-column: 2;
+  grid-row: 2;
+  }
+
+#checkout-button:hover{
+  background-color: var(--primary-color);
+  color: black;
 }
 
 @media screen and (min-width: 500px) {

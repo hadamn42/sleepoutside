@@ -129,7 +129,7 @@ function totalCheck(){
     // console.log(till);
     total.innerHTML = total.innerHTML.slice(0, 8) + till;
     cartFooter.classList.remove("cart-footer-hide");
-
+    cartFooter.classList.add("cart-footer-show");
   }else{
     if(cartFooter.classList !== ""){
       cartFooter.classList.add("cart-footer-hide");
