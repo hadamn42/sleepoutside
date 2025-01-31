@@ -9,6 +9,7 @@ function renderCartContents() {
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
 
   //has to be a funciton here or the buttons will not add back in for some reason
+  totalCheck();
   removeIt();
   subtractItem();
   addItem();
@@ -116,4 +117,33 @@ function addRemove (targetProdId, butClass){
   };
   setLocalStorage("so-cart", cartList);
   renderCartContents();
+}
+
+// adding a total based on the quantity and price
+function totalCheck(){
+  const total = document.querySelector(".cart-total");
+  const cart = document.querySelector(".product-list");
+  const cartFooter = document.getElementById("cart-footer");
+  if (cart.innerHTML !== ""){
+    const till = totalCalc();
+    // console.log(till);
+    total.innerHTML = total.innerHTML.slice(0, 8) + till;
+    cartFooter.classList.remove("cart-footer-hide");
+
+  }else{
+    if(cartFooter.classList !== ""){
+      cartFooter.classList.add("cart-footer-hide");
+    };
+  };
+}
+
+function totalCalc(){
+  const cartList = getLocalStorage("so-cart");
+  let total = 0;
+  cartList.map((item) => {
+    total = total + (item.Qty * item.FinalPrice);
+    // console.log(total);
+  });
+  return total.toFixed(2);
+
 }

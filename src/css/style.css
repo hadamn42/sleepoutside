@@ -289,6 +289,16 @@ button {
   grid-column: 5;
 }
 
+/* Cart total styles */
+.cart-total{
+  text-align: right;
+  /* background-color: yellow; */
+}
+
+.cart-footer-hide{
+  display: none;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
