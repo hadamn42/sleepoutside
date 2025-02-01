@@ -336,6 +336,19 @@ button {
   }
 }
 
+/* alert styles */
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: var(--primary-color);
+  border: 1px solid darkorange;
+}
+.alert > p {
+  margin: 0;
+}
+
 footer {
   font-size: var(--small-font);
   padding: 1em;
